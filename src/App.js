@@ -15,7 +15,11 @@ class App extends Component {
      <div className="App">
       <h1>Hello dude</h1> 
       <p>this is working</p>
-      <Person />
+      <Person name="Max" age="23" />
+
+      <Person name="Nando Vlogs" age="90" > My Hobbies: Youtube </Person>
+
+      <Person name="Kuan Yang" age="30" />
      </div>
 
 //Components are the core building block of React apps
