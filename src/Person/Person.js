@@ -14,7 +14,10 @@ const person = (props) => {
     )
 };
 
-
+//props.
+//what we output is defined by this component. 
+//we take it to app.js
+//we don't use state here. we use function syntax. we use props. 
 
 
 export default person;
