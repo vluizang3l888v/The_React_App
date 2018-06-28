@@ -17,28 +17,41 @@ state = {
     {name: 'Kuan Yang', age:30 }
 //OVERIDE happen later. 
   ],
-  otherState: 'other crazy value'
+  otherState: 'other crazy value',
+  switch: 0
 }
 
 
 //become method.
 switchNameHandler = () => {
   //console.log("se hizo clic aquí");
+  var tmp;
+  if (!this.state.switch) {
+    tmp = [
+      {name: 'Flamingo Vlogs', age:65 },
+      {name: 'Nando Vlogs', age: 40 },
+      {name: 'Kuan Yang 應對', age:30 }
+
+    ];
+    this.setState({switch: 1})
+  } else {
+    tmp = [
+      {name: 'Max', age:23 },
+      {name: 'Nando Vlogs', age: 90 },
+      {name: 'Kuan Yang', age:30 }
+    ]
+    this.setState({switch: 0}) 
+  }
 
  // this.state.persons[0].name ='YouTube views'
 //don't do the above. line 29- because we should not change the state directly like this REACT will not recognize that. 
-this.setState( {
-  //setState NOT DEFINED BUT , 'WE' extent Component. -this is made available by React Library
-  //setState takes an object as an argument and will merge what ever you define here with existing state.
-  // SetState [setState allows us to update special state property] line 13. ['will then ensure that REACT knows about this update and then updates the DOM']
-  
-  persons: [
-    {name: 'Flamingo Vlogs', age:65 },
-    {name: 'Nando Vlogs', age: 40 },
-    {name: 'Kuan Yang 應對', age:30 }
-
-  ]
-})
+  this.setState( {
+    //setState NOT DEFINED BUT , 'WE' extent Component. -this is made available by React Library
+    //setState takes an object as an argument and will merge what ever you define here with existing state.
+    // SetState [setState allows us to update special state property] line 13. ['will then ensure that REACT knows about this update and then updates the DOM']
+    
+    persons: tmp
+  })
 } 
 
 //<button onClick={this.switchNameHandler()}>Switch Name</button>
